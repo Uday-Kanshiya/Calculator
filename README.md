@@ -1,6 +1,10 @@
 # Aether Scientific Calculator 🧮
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://uday-kanshiya-calculator-app-f3wpyf.streamlit.app/)
+
 Aether Scientific is a stunningly designed, premium, high-fidelity scientific calculator web application built with Python and Streamlit. It features safe mathematical parsing, beautiful glassmorphic UI aesthetics, a click-to-load history panel, and an interactive 2D function plotter.
+
+🔗 **Live Demo:** [uday-kanshiya-calculator-app-f3wpyf.streamlit.app](https://uday-kanshiya-calculator-app-f3wpyf.streamlit.app/)
 
 **⚠️ Note: All logarithmic calculations (log, ln, log2, log10) are strictly disabled by design in this project.**
 
