@@ -156,12 +156,14 @@ Based on standard conversion ratios, the estimated usage is:
 
 # CodeGraph
 
-This section tracks the token utilization for the CodeGraph visualization task, starting with the prompt to generate the dependency graph.
+This section tracks the token utilization for the CodeGraph visualization and expansion tasks, starting with the prompt to generate the dependency graph.
 
 ---
 
 ## Making Graph
 
+| Component | Character Count | Word Count | Estimated Tokens (Char-based: 1/4) | Estimated Tokens (Word-based: 1.3x) | Average Token Estimate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | **Raw User Prompt (Step 30)** | 122 | 15 | 30 | 20 | **25** |
 | **Full Prompt (with metadata wrapper)** | 252 | 25 | 63 | 32 | **48** |
 
@@ -169,12 +171,13 @@ This section tracks the token utilization for the CodeGraph visualization task, 
 
 ## Adding featue
 
-This section tracks the token utilization for implementing the logarithm features (Steps 102 to 153), including backend logic expansion, keypad UI integration, unit testing, and GitHub push.
+This section tracks the token utilization for planning and implementing the logarithm features (Steps 92 to 153), including research, UI layout design, backend logic expansion, unit testing, and GitHub push.
 
 | Component | Character Count | Word Count | Estimated Tokens (Char-based: 1/4) | Estimated Tokens (Word-based: 1.3x) | Average Token Estimate |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Raw User Prompt (Step 102)** | 138 | 12 | 35 | 16 | **25** |
-| **Model & Tool Work (Steps 103-153)** | 58,833 | 6,207 | 14,708 | 8,069 | **11,389** |
-| **TOTAL TURN UTILIZATION** | **58,971** | **6,219** | **14,743** | **8,085** | **11,414** |
+| **Planning & Design Phase (Steps 92-101)** | 21,757 | 2,512 | 5,439 | 3,266 | **4,352** |
+| **Implementation Phase (Steps 102-153)** | 58,971 | 6,219 | 14,743 | 8,085 | **11,414** |
+| **TOTAL TASK UTILIZATION** | **80,728** | **8,731** | **20,182** | **11,351** | **15,766** |
+
 
 
