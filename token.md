@@ -173,7 +173,7 @@ This section tracks the token utilization for generating the CodeGraph dependenc
 
 ---
 
-## Adding featue
+## Adding feature
 
 This section tracks the token utilization for planning and implementing the logarithm features (Steps 92 to 153), including research, UI layout design, backend logic expansion, unit testing, and GitHub push.
 
