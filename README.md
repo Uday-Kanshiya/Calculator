@@ -6,7 +6,7 @@ Aether Scientific is a stunningly designed, premium, high-fidelity scientific ca
 
 🔗 **Live Demo:** [uday-kanshiya-calculator-app-f3wpyf.streamlit.app](https://uday-kanshiya-calculator-app-f3wpyf.streamlit.app/)
 
-**⚠️ Note: All logarithmic calculations (log, ln, log2, log10) are strictly disabled by design in this project.**
+**✨ Feature Update: Logarithmic calculations (log, ln, log2) are now fully supported!**
 
 ---
 
@@ -57,6 +57,7 @@ Streamlit will automatically launch the app in your default browser at `http://l
 - **Trigonometric**: `sin(x)`, `cos(x)`, `tan(x)`
 - **Inverse Trig**: `asin(x)`, `acos(x)`, `atan(x)`
 - **Hyperbolic**: `sinh(x)`, `cosh(x)`, `tanh(x)`
+- **Logarithmic**: Common log `log(x)` (base 10), Natural log `ln(x)` (base e), Binary log `log2(x)` (base 2)
 - **Power & Roots**: `x^y` (power), `x^2` (square), `sqrt(x)` (square root), `cbrt(x)` (cubic root)
 - **Algebraic**: Factorial `fact(x)`, Absolute `abs(x)`, Modulo `%`, Exponential `exp(x)`
 - **Constants**: `pi` ($\pi$), `e`
