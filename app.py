@@ -100,7 +100,7 @@ def handle_click(label):
         st.session_state.expression += "^"
     elif label == "n!":
         st.session_state.expression += "fact("
-    elif label in ["sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "sqrt", "cbrt", "exp"]:
+    elif label in ["sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "sqrt", "cbrt", "exp", "log", "ln"]:
         st.session_state.expression += f"{label}("
     else:
         st.session_state.expression += label
@@ -157,15 +157,13 @@ with st.sidebar:
         <code>asin(x)</code>, <code>acos(x)</code>, <code>atan(x)</code><br>
         <code>sinh(x)</code>, <code>cosh(x)</code>, <code>tanh(x)</code><br>
         <code>sqrt(x)</code> (square root)<br>
-        <code>cbrt(x)</code> (cubic root)<br>
+        <code>log(x)</code>, <code>ln(x)</code> (logarithms)<br>
         <code>fact(x)</code> (factorial $x!$)<br>
         <code>abs(x)</code>, <code>exp(x)</code><br>
         <strong>Constants:</strong><br>
         <code>pi</code> ($\pi$), <code>e</code>
     </div>
     """, unsafe_allow_html=True)
-    
-    st.info("⚠️ Note: Logarithmic calculations (log, ln) are completely omitted by design.")
 
 # ----------------- MAIN LAYOUT -----------------
 
@@ -203,12 +201,12 @@ with tab1:
     keypad = [
         [("(", "sci"), (")", "sci"), ("xʸ", "sci"), ("⌫", "clear"), ("AC", "clear")],
         [("sin", "sci"), ("cos", "sci"), ("tan", "sci"), ("sqrt", "sci"), ("π", "sci")],
-        [("asin", "sci"), ("acos", "sci"), ("atan", "sci"), ("cbrt", "sci"), ("e", "sci")],
+        [("asin", "sci"), ("acos", "sci"), ("atan", "sci"), ("log", "sci"), ("e", "sci")],
         [("sinh", "sci"), ("cosh", "sci"), ("tanh", "sci"), ("n!", "sci"), ("%", "sci")],
         [("7", "num"), ("8", "num"), ("9", "num"), ("÷", "op"), ("1/x", "sci")],
         [("4", "num"), ("5", "num"), ("6", "num"), ("×", "op"), ("x²", "sci")],
         [("1", "num"), ("2", "num"), ("3", "num"), ("-", "op"), ("+/-", "sci")],
-        [("0", "num"), (".", "num"), ("+", "op"), ("=", "eq"), ("exp", "sci")]
+        [("0", "num"), (".", "num"), ("+", "op"), ("=", "eq"), ("ln", "sci")]
     ]
     
     for row_idx, row in enumerate(keypad):
