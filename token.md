@@ -153,3 +153,17 @@ Based on standard conversion ratios, the estimated usage is:
 | **Full Prompt (with XML wrappers & metadata)** | 315 | 31 | 79 |
 | **Model Work (Steps 9–77: research, coding, git pushes)** | 87,336 | 9,394 | 21,834 |
 | **TOTAL TURN UTILIZATION** | **87,651** | **9,425** | **21,913** |
+
+# CodeGraph
+
+This section tracks the token utilization for the CodeGraph visualization task, starting with the prompt to generate the dependency graph.
+
+---
+
+## Making Graph
+
+| Component | Character Count | Word Count | Estimated Tokens (Char-based: 1/4) | Estimated Tokens (Word-based: 1.3x) | Average Token Estimate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Raw User Prompt (Step 30)** | 122 | 15 | 30 | 20 | **25** |
+| **Full Prompt (with metadata wrapper)** | 252 | 25 | 63 | 32 | **48** |
+
