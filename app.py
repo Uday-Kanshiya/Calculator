@@ -100,7 +100,7 @@ def handle_click(label):
         st.session_state.expression += "^"
     elif label == "n!":
         st.session_state.expression += "fact("
-    elif label in ["sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "sqrt", "cbrt", "exp", "log", "ln", "log2"]:
+    elif label in ["sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "sqrt", "cbrt", "exp"]:
         st.session_state.expression += f"{label}("
     else:
         st.session_state.expression += label
@@ -156,8 +156,6 @@ with st.sidebar:
         <code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code><br>
         <code>asin(x)</code>, <code>acos(x)</code>, <code>atan(x)</code><br>
         <code>sinh(x)</code>, <code>cosh(x)</code>, <code>tanh(x)</code><br>
-        <code>log(x)</code> (base 10), <code>ln(x)</code> (natural)<br>
-        <code>log2(x)</code> (base 2)<br>
         <code>sqrt(x)</code> (square root)<br>
         <code>cbrt(x)</code> (cubic root)<br>
         <code>fact(x)</code> (factorial $x!$)<br>
@@ -166,6 +164,8 @@ with st.sidebar:
         <code>pi</code> ($\pi$), <code>e</code>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.info("⚠️ Note: Logarithmic calculations (log, ln) are completely omitted by design.")
 
 # ----------------- MAIN LAYOUT -----------------
 
@@ -203,8 +203,8 @@ with tab1:
     keypad = [
         [("(", "sci"), (")", "sci"), ("xʸ", "sci"), ("⌫", "clear"), ("AC", "clear")],
         [("sin", "sci"), ("cos", "sci"), ("tan", "sci"), ("sqrt", "sci"), ("π", "sci")],
-        [("asin", "sci"), ("acos", "sci"), ("atan", "sci"), ("log", "sci"), ("e", "sci")],
-        [("sinh", "sci"), ("cosh", "sci"), ("tanh", "sci"), ("n!", "sci"), ("ln", "sci")],
+        [("asin", "sci"), ("acos", "sci"), ("atan", "sci"), ("cbrt", "sci"), ("e", "sci")],
+        [("sinh", "sci"), ("cosh", "sci"), ("tanh", "sci"), ("n!", "sci"), ("%", "sci")],
         [("7", "num"), ("8", "num"), ("9", "num"), ("÷", "op"), ("1/x", "sci")],
         [("4", "num"), ("5", "num"), ("6", "num"), ("×", "op"), ("x²", "sci")],
         [("1", "num"), ("2", "num"), ("3", "num"), ("-", "op"), ("+/-", "sci")],
