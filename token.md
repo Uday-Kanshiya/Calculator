@@ -179,5 +179,14 @@ This section tracks the token utilization for planning and implementing the loga
 | **Implementation Phase (Steps 102-153)** | 58,971 | 6,219 | 14,743 | 8,085 | **11,414** |
 | **TOTAL TASK UTILIZATION** | **80,728** | **8,731** | **20,182** | **11,351** | **15,766** |
 
+# Graphify
 
+This section tracks the token utilization for the Graphify dependency graph generation tasks.
 
+---
+
+## Making Graph
+
+| Component | Character Count | Word Count | Estimated Tokens (Char-based: 1/4) | Estimated Tokens (Word-based: 1.3x) | Average Token Estimate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Raw User Prompt** | 121 | 15 | 30 | 20 | **32** |
