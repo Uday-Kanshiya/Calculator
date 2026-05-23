@@ -84,6 +84,21 @@ class SafeEvaluator(ast.NodeVisitor):
         def cbrt_val(x):
             return math.copysign(abs(x) ** (1/3), x)
 
+        def log_val(x):
+            if x <= 0:
+                raise ValueError("Logarithm undefined for x <= 0")
+            return math.log10(x)
+
+        def ln_val(x):
+            if x <= 0:
+                raise ValueError("Natural logarithm undefined for x <= 0")
+            return math.log(x)
+
+        def log2_val(x):
+            if x <= 0:
+                raise ValueError("Logarithm base 2 undefined for x <= 0")
+            return math.log2(x)
+
         return {
             'sin': sin_val,
             'cos': cos_val,
@@ -99,6 +114,10 @@ class SafeEvaluator(ast.NodeVisitor):
             'fact': fact_val,
             'abs': abs,
             'exp': math.exp,
+            'log': log_val,
+            'ln': ln_val,
+            'log10': log_val,
+            'log2': log2_val,
         }
 
     def evaluate(self, expr_str: str):
@@ -110,25 +129,6 @@ class SafeEvaluator(ast.NodeVisitor):
         expr_str = expr_str.replace('π', 'pi')
         expr_str = expr_str.replace('×', '*')
         expr_str = expr_str.replace('÷', '/')
-        
-        # 2. STRICT CHECK: Block any logarithmic inputs
-        # Look for log/ln as word tokens to prevent substrings like "clog" or "blog" from blocking, 
-        # but let's be extremely safe: block any case-insensitive occurrences of log, ln, log10, log2.
-        # We also check for them specifically.
-        expr_lower = expr_str.lower()
-        forbidden_keywords = ['log', 'ln', 'log10', 'log2']
-        
-        # We can tokenize or simply check if any of these exist in the string.
-        # To avoid blocking words like "cbrt" because of "ln" (wait, "cbrt" does not have "ln"),
-        # but let's make sure we check for exact log patterns.
-        # A simple check: check for 'log', 'ln' (as words or followed by '(').
-        # To be completely safe and strict, let's check:
-        import re
-        for forbidden in forbidden_keywords:
-            # Match word boundary or prefix, e.g., "log(", "log (", "ln(", etc.
-            pattern = rf"\b{forbidden}\b|{forbidden}\s*\("
-            if re.search(pattern, expr_lower):
-                raise ValueError("Logarithmic functions ('log', 'ln') are strictly disabled in this calculator.")
 
         if not expr_str.strip():
             return ""
@@ -187,8 +187,6 @@ class SafeEvaluator(ast.NodeVisitor):
         funcs = self.get_functions()
         
         if func_name not in funcs:
-            if func_name in ['log', 'ln', 'log10', 'log2']:
-                raise ValueError("Logarithmic functions are strictly disabled.")
             raise NameError(f"Unsupported function: '{func_name}'")
         
         if len(node.args) != 1:
