@@ -162,10 +162,14 @@ This section tracks the token utilization for the CodeGraph visualization and ex
 
 ## Making Graph
 
+This section tracks the token utilization for generating the CodeGraph dependency visualization, including CLI environment discovery, Unicode file decoding patch, and interactive HTML rendering (Steps 30 to 71).
+
 | Component | Character Count | Word Count | Estimated Tokens (Char-based: 1/4) | Estimated Tokens (Word-based: 1.3x) | Average Token Estimate |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Raw User Prompt (Step 30)** | 122 | 15 | 30 | 20 | **25** |
-| **Full Prompt (with metadata wrapper)** | 252 | 25 | 63 | 32 | **48** |
+| **Model & Tool Work (Steps 31-71)** | 33,306 | 3,091 | 8,327 | 4,019 | **6,172** |
+| **TOTAL TURN UTILIZATION** | **33,558** | **3,116** | **8,390** | **4,051** | **6,220** |
+
 
 ---
 
