@@ -198,3 +198,15 @@ This section tracks the token utilization for the Graphify dependency graph gene
 | **Intermediate Model Work (Steps 15-40: tool calls & command execution)** | 23,988 | 2,319 | 5,997 | 3,084 | **4,540** |
 | **Final LLM Response (Step 41)** | 2,562 | 286 | 640 | 380 | **510** |
 | **TOTAL TURN UTILIZATION** | **26,801** | **2,630** | **6,700** | **3,497** | **5,098** |
+
+---
+
+## Adding feature
+
+| Component | Character Count | Word Count | Estimated Tokens (Char-based: 1/4) | Estimated Tokens (Word-based: 1.33x) | Average Token Estimate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Raw User Prompt** | 92 | 18 | 23 | 24 | **24** |
+| **Full Prompt (with metadata wrapper)** | 222 | 28 | 56 | 37 | **46** |
+| **Intermediate Model Work (Steps 87-130: tool calls & command execution)** | 48,809 | 5,097 | 12,202 | 6,779 | **9,490** |
+| **Final LLM Response (Step 131)** | 2,146 | 304 | 537 | 404 | **470** |
+| **TOTAL TURN UTILIZATION** | **51,177** | **5,429** | **12,795** | **7,220** | **10,006** |
