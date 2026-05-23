@@ -1,4 +1,4 @@
-# Normal prompt
+# When LLM has created the project (in same session)
 
 This section tracks the token utilization from **Step 91** (the step following the token tracking request) up to **Step 194** (the completion and push of the logarithm features).
 
@@ -125,3 +125,31 @@ Based on standard conversion ratios, the estimated usage is:
 | **193** | MODEL | PLANNER_RESPONSE | 3,116 | 264 | 779 |
 | **194** | MODEL | CODE_ACTION | 282 | 29 | 70 |
 | **TOTAL** | | | **127,326** | **12,985** | **31,832** |
+
+# LLM has been provided the whole project to work (new session)
+
+This section tracks the token utilization for the turn starting with the logarithm implementation prompt (Step 8) up to the push and completion (Step 77).
+
+---
+
+## 📈 Total Utilized Tokens
+
+Based on standard conversion ratios, the estimated usage is:
+
+- **Estimated Tokens (Character-based)**: **21,913 tokens** *(Formula: `Total Characters / 4.0`)*
+- **Estimated Tokens (Word-based)**: **12,535 tokens** *(Formula: `Total Words * 1.33`)*
+
+### Key Aggregates
+- **Total Characters parsed**: `87,651`
+- **Total Words parsed**: `9,425`
+
+---
+
+## 🗂️ Step-by-Step Breakdown
+
+| Component | Character Count | Word Count | Estimated Tokens |
+| :--- | :--- | :--- | :--- |
+| **Raw User Prompt (Step 8)** | 185 | 21 | 46 |
+| **Full Prompt (with XML wrappers & metadata)** | 315 | 31 | 79 |
+| **Model Work (Steps 9–77: research, coding, git pushes)** | 87,336 | 9,394 | 21,834 |
+| **TOTAL TURN UTILIZATION** | **87,651** | **9,425** | **21,913** |
